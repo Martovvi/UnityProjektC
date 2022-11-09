@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 9089546768943090462}
   - component: {fileID: 523835959539311565}
   - component: {fileID: 8854473784633783111}
-  - component: {fileID: 5881942667216158339}
   m_Layer: 0
   m_Name: Glasses_Shadow
   m_TagString: Untagged
@@ -167,19 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5881942667216158339
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407540384919496979}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1894745417105371527
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894745417105371527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8025, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -239,7 +225,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -537,7 +523,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894745418574506602}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f75700b93a3cc12439f521ee11ec2fd4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -574,9 +560,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 1894745417591191188}
   orientation: {fileID: 1894745418464372899}
+  jumpKey: 32
   moveSpeed: 10
   groundDrag: 5
-  playerHeight: 3.5
+  jumpForce: 20
+  jumpCooldown: 0.5
+  airMultiplier: 0.7
+  playerHeight: 4
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -591,7 +581,6 @@ GameObject:
   - component: {fileID: 1894745419066102599}
   - component: {fileID: 1894745419066102596}
   - component: {fileID: 1894745419066102597}
-  - component: {fileID: 1894745419066102598}
   m_Layer: 7
   m_Name: Glasses
   m_TagString: Untagged
@@ -664,16 +653,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1894745419066102598
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894745419066102456}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
