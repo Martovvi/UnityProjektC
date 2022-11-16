@@ -14,15 +14,14 @@ public class DebugHUD : MonoBehaviour
 
     private Vector3 dir;
     private float speed;
-
-
+    
     // Bools
     public bool displayVelocity;
 
     private void Start()
     {
         velocityLabel = GetComponentInChildren<TextMeshProUGUI>();
-        rb = player.GetComponent<Rigidbody>();
+        rb = player.GetComponentInChildren<Rigidbody>();
     }
 
     private void Update()

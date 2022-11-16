@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7776343821212589793}
   - component: {fileID: 7430886272955323697}
   - component: {fileID: 7669646233697471524}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerObject_Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 9089546768943090462}
   - component: {fileID: 523835959539311565}
   - component: {fileID: 8854473784633783111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glasses_Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 1894745417105371525}
   - component: {fileID: 1894745417105371526}
   - component: {fileID: 1894745417105371523}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 90
   orthographic: 0
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1894745417569977669}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1894745417591191188}
   - component: {fileID: 1894745417591191187}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1894745417744606592}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1894745418464372899}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 1894745418574506601}
   - component: {fileID: 1894745418574506613}
   - component: {fileID: 1894745418574506612}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: PlayerObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,15 +561,21 @@ MonoBehaviour:
   playerCam: {fileID: 1894745417591191188}
   orientation: {fileID: 1894745418464372899}
   jumpKey: 32
-  moveSpeed: 10
+  sprintKey: 304
+  crouchKey: 306
+  walkSpeed: 8
+  sprintSpeed: 15
   groundDrag: 5
   jumpForce: 20
-  jumpCooldown: 0.5
-  airMultiplier: 0.7
-  playerHeight: 4
+  airMultiplier: 0.4
+  crouchSpeed: 4
+  crouchHeight: 0.55
+  playerHeight: 3.5
+  playerRadius: 0.5
   ground:
     serializedVersion: 2
     m_Bits: 64
+  state: 0
 --- !u!1 &1894745419066102456
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +587,7 @@ GameObject:
   - component: {fileID: 1894745419066102599}
   - component: {fileID: 1894745419066102596}
   - component: {fileID: 1894745419066102597}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}

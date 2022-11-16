@@ -11,19 +11,35 @@ public class PlayerMovement : MonoBehaviour {
     public Transform playerCam;
     public Transform orientation;
 
-    [Header("Keybinds")] public KeyCode jumpKey = KeyCode.Space;
+    // Keybinds
+    [Header("Keybinds")] 
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode crouchKey = KeyCode.LeftControl;
     
-
     // Movement
-    [Header("Movement")] public float moveSpeed;
+    [Header("Movement")] 
+    private float moveSpeed;
+    public float walkSpeed;
+    public float sprintSpeed;
     public float groundDrag;
+    
+    // Jumping
+    [Header("Jumping")]
     public float jumpForce;
-    public float jumpCooldown;
     private bool readyToJump;
     public float airMultiplier;
+
+    // Crouching
+    [Header("Crouching")] 
+    public float crouchSpeed;
+    public float crouchHeight;
+    private float startYScale;
     
     // Ground Check
-    [Header("Ground Check")] public float playerHeight;
+    [Header("Ground Check")] 
+    public float playerHeight;
+    public float playerRadius;
     public LayerMask ground;
     private bool grounded;
     
@@ -34,8 +50,15 @@ public class PlayerMovement : MonoBehaviour {
     // Other
     private Rigidbody rb;
     private Vector3 moveDirection;
+    public MovementState state;
+    public enum MovementState
+    {
+        WALKING,
+        SPRINTING,
+        CROUCHING,
+        AIR
+    }
     
-
     // Rotation and look
     private float xRotation;
     private float sensitivity = 50f;
@@ -59,6 +82,9 @@ public class PlayerMovement : MonoBehaviour {
 
         // Init jumping
         readyToJump = true;
+        
+        // Init player Y scale
+        startYScale = transform.localScale.y;
     }
     
     private void Update() 
@@ -67,6 +93,7 @@ public class PlayerMovement : MonoBehaviour {
         Look();
         GroundCheck();
         SpeedControl();
+        StateHandler();
     }
 
     private void FixedUpdate() 
@@ -74,23 +101,53 @@ public class PlayerMovement : MonoBehaviour {
         Movement();
     }
 
-    // User Input (should be it's own class)
+    // User input (should be it's own class)
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKeyDown(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
             
             Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
         }
-    } 
+        
+        Crouch();
+    }
     
-    // Player Movement WASD
+    // Player movement state machine
+    private void StateHandler()
+    {
+        // Mode - Crouching
+        if (grounded && Input.GetKey(crouchKey))
+        {
+            state = MovementState.CROUCHING;
+            moveSpeed = crouchSpeed;
+        }
+
+        // Mode - Sprinting
+        else if (grounded && Input.GetKey(sprintKey) && CanStandUp())
+        {
+            state = MovementState.SPRINTING;
+            moveSpeed = sprintSpeed;
+        }
+        
+        // Mode - Walking
+        else if (grounded && !Input.GetKey(crouchKey) && CanStandUp())
+        {
+            state = MovementState.WALKING;
+            moveSpeed = walkSpeed;
+        }
+
+        // Mode - Air
+        else
+        {
+            state = MovementState.AIR;
+        }
+    }
+    // Player movement with WASD
     private void Movement() 
     {
         // calculate movement direction
@@ -107,24 +164,23 @@ public class PlayerMovement : MonoBehaviour {
         {
             rb.AddForce(10f * airMultiplier * moveSpeed * moveDirection, ForceMode.Force);
         }
-        
     }
     
     // FPS camera control with mouse
     private void Look() 
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
+        float mouseX = Input.GetAxisRaw("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
 
-        // Find current look rotation
+        // find current look rotation
         Vector3 rot = playerCam.transform.localRotation.eulerAngles;
         desiredX = rot.y + mouseX;
         
-        // Rotate, and also make sure we dont over- or under-rotate
+        // rotate, and also make sure we dont over- or under-rotate
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        // Perform the rotations
+        // perform the rotations
         playerCam.transform.localRotation = Quaternion.Euler(xRotation, desiredX, 0);
         orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
     }
@@ -132,14 +188,26 @@ public class PlayerMovement : MonoBehaviour {
     // Casts raycast to ground to check if player is on Layer "Ground"
     private void GroundCheck()
     {
-        // line cast
-        // grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
+        if (state == MovementState.CROUCHING)
+        {
+            // Line cast
+            // grounded = Physics.Raycast(transform.position, Vector3.down, crouchYScale * 1.1f, ground);
+            // Debug.DrawRay(transform.position, 1.1f * crouchYScale * Vector3.down, Color.blue);
+            
+            // Capsule cast
+            grounded = Physics.CheckCapsule(transform.position, transform.position - new Vector3(0,(crouchHeight * 0.25f + 0.2f), 0), playerRadius, ground);
+        }
+        else
+        {
+            // Line cast
+            // grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f, ground);
+            // Debug.DrawRay(transform.position, 0.5f * playerHeight * Vector3.down, Color.red);
+            
+            // Capsule cast
+            grounded = Physics.CheckCapsule(transform.position, transform.position - new Vector3(0,(playerHeight * 0.25f + 0.2f), 0), playerRadius, ground);
+        }
         
-        // capsule cast
-        grounded = Physics.CheckCapsule(transform.position, transform.position - new Vector3(0,(playerHeight * 0.25f + 0.2f), 0), 0.5f, ground);
-
-        // Debug.DrawRay(transform.position, Vector3.down * 3.5f, Color.red);
-
+        // Apply groundDrag if grounded
         if (grounded)
         {
             rb.drag = groundDrag;
@@ -163,17 +231,60 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    
+    // Controls player jumping ability
     private void Jump()
     {
-        // reset y velocity
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        if (grounded)
+        {
+            // reset y velocity
+            rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+            readyToJump = true;
+        }
     }
 
-    private void ResetJump()
+    // Scales player down when crouching
+    private void Crouch()
     {
-        readyToJump = true;
+        // start crouch
+        if (Input.GetKeyDown(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, crouchHeight, transform.localScale.z);
+            rb.AddForce(Vector3.down * 0.5f, ForceMode.Impulse);
+        }
+
+        // stop crouch
+        if (CanStandUp() && !Input.GetKey(crouchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+        }
+    }
+
+    // Checks if player can stand up when crouched
+    private bool CanStandUp()
+    {
+        /*// Line cast
+        if (Physics.Raycast(transform.position, Vector3.up, playerHeight * 0.7f))
+        {
+            return false;
+        }*/
+        
+        // Capsule cast
+        if (Physics.CheckSphere(transform.position + new Vector3(0,(playerHeight * 0.58f), 0), playerRadius))
+        {
+            return false;
+        }
+        
+        return true;
+    }
+
+    // Debug Gizmos for CanStandUp debugging
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        //Gizmos.DrawRay(transform.position, 0.7f * Vector3.up * playerHeight);
+        Gizmos.DrawSphere(transform.position + new Vector3(0,(playerHeight * 0.58f), 0), playerRadius);
     }
 }
