@@ -575,6 +575,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  maxSlopeAngle: 40
   state: 0
 --- !u!1 &1894745419066102456
 GameObject:

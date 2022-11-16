@@ -43,6 +43,12 @@ public class PlayerMovement : MonoBehaviour {
     public LayerMask ground;
     private bool grounded;
     
+    // Slope Handling
+    [Header("Slope Handling")]
+    public float maxSlopeAngle;
+    private RaycastHit slopeHit;
+    private bool exitingSlope;
+    
     // Input
     private float horizontalInput;
     private float verticalInput;
@@ -110,6 +116,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKeyDown(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
+            exitingSlope = true;
             
             Jump();
         }
@@ -152,9 +159,20 @@ public class PlayerMovement : MonoBehaviour {
     {
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        
+        // on slope
+        if (OnSlope() && !exitingSlope)
+        {
+            rb.AddForce(20f * moveSpeed * GetSlopeMoveDirection(), ForceMode.Force);
+
+            if (rb.velocity.y > 0)
+            {
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+            }
+        }
 
         // on ground
-        if (grounded)
+        else if (grounded)
         { 
             rb.AddForce(10f * moveSpeed * moveDirection, ForceMode.Force);
         }
@@ -164,6 +182,9 @@ public class PlayerMovement : MonoBehaviour {
         {
             rb.AddForce(10f * airMultiplier * moveSpeed * moveDirection, ForceMode.Force);
         }
+        
+        // turn gravity off while on slope
+        rb.useGravity = !OnSlope();
     }
     
     // FPS camera control with mouse
@@ -221,13 +242,26 @@ public class PlayerMovement : MonoBehaviour {
     // Limits player speed
     private void SpeedControl()
     {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        
-        // limit velocity if needed
-        if (flatVel.magnitude > moveSpeed)
+        // limiting speed on slope
+        if (OnSlope() && !exitingSlope)
         {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            if (rb.velocity.magnitude > moveSpeed)
+            {
+                rb.velocity = rb.velocity.normalized * moveSpeed;
+            }
+        }
+
+        // limiting speed on ground or in air
+        else
+        {
+            Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        
+            // limit velocity if needed
+            if (flatVel.magnitude > moveSpeed)
+            {
+                Vector3 limitedVel = flatVel.normalized * moveSpeed;
+                rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            }
         }
     }
 
@@ -236,6 +270,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (grounded)
         {
+            exitingSlope = false;
             // reset y velocity
             rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
@@ -278,6 +313,24 @@ public class PlayerMovement : MonoBehaviour {
         }
         
         return true;
+    }
+    
+    // Check if player is on slope at a specified angle
+    private bool OnSlope()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
+
+        return false;
+    }
+
+    // Project move direction based on angle of slope
+    private Vector3 GetSlopeMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
     // Debug Gizmos for CanStandUp debugging
