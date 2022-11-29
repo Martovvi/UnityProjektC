@@ -43,13 +43,13 @@ public class EnemyAI : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, playerLayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
+        if (!playerInSightRange && !playerInAttackRange) Patrolling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
     }
 
     // Default enemy state when the player has not been detected
-    private void Patroling()
+    private void Patrolling()
     {
         if (!walkPointSet) SearchWalkPoint();
 
@@ -67,7 +67,7 @@ public class EnemyAI : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z);
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         // Search if there is an actual ground to walk on
         if (Physics.Raycast(walkPoint, -transform.up, 2f, groundLayer))
@@ -85,7 +85,7 @@ public class EnemyAI : MonoBehaviour
     // The enemies are close enough to the player to attack him
     private void AttackPlayer()
     {
-        // Set walk destination to player
+        // Make sure enemy doesn't move
         agent.SetDestination(transform.position);
         
         // Look at player when attacking
