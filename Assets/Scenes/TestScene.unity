@@ -252,9 +252,39 @@ MonoBehaviour:
   lr: {fileID: 1124672807}
   maxGrappleDistance: 25
   grappleDelayTime: 0.1
-  overshootYAxis: 3
+  overshootYAxis: 1
   grappleCooldown: 1
   grappleKey: 324
+--- !u!114 &161785428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161785419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afed0e857362ba42a9ed450b6aafacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  wallRunForce: 200
+  wallJumpUpForce: 7
+  wallJumpSideForce: 12
+  wallClimbSpeed: 3
+  maxWallRunTime: 1.5
+  jumpKey: 32
+  upwardsRunKey: 304
+  downwardsRunKey: 306
+  wallCheckDistance: 0.7
+  minJumpHeight: 2
+  exitWallTime: 0.2
+  orientation: {fileID: 2098653290}
 --- !u!4 &219879595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1894745417105371524, guid: eb164dfe6a375e641bb712b1bd6c17bc,
@@ -688,7 +718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133786417}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.63, y: 6.2, z: 10.85}
+  m_LocalPosition: {x: 22.63, y: 18.4, z: 10.85}
   m_LocalScale: {x: 11.847036, y: 0.192792, z: 9.1278}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1554,6 +1584,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005327550}
   m_CullTransparentMesh: 1
+--- !u!4 &2098653290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1894745418464372899, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119276737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2119276737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1625,6 +1661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: state
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894745418574506612, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+        type: 3}
+      propertyPath: wallrunSpeed
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1894745418574506614, guid: eb164dfe6a375e641bb712b1bd6c17bc,
         type: 3}

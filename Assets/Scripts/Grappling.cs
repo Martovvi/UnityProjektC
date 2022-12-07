@@ -17,6 +17,7 @@ public class Grappling : MonoBehaviour
     public float overshootYAxis;
 
     private Vector3 grappleContactPoint;
+    private SpringJoint joint;
 
     [Header("Cooldown")]
     public float grappleCooldown;
@@ -37,6 +38,8 @@ public class Grappling : MonoBehaviour
     {
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
 
+        if(Input.GetKeyUp(grappleKey)) StopGrapple();
+
         if (grappleCooldownTimer > 0)
             grappleCooldownTimer -= Time.deltaTime;
     }
@@ -53,12 +56,32 @@ public class Grappling : MonoBehaviour
 
         grappling = true;
 
-        pm.freeze = true;
+        //pm.freeze = true;
 
         RaycastHit hit;
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, grappleableSurface))
         {
             grappleContactPoint = hit.point;
+            
+            //Swinging implementation
+            joint = pm.gameObject.AddComponent<SpringJoint>();
+            joint.autoConfigureConnectedAnchor = false;
+            joint.connectedAnchor = grappleContactPoint;
+            
+            //////////Copypasta
+
+            float distanceFromPoint = Vector3.Distance(pm.transform.position, grappleContactPoint);
+
+            //The distance grapple will try to keep from grapple point. 
+            joint.maxDistance = distanceFromPoint * 0.8f;
+            joint.minDistance = 0;//distanceFromPoint * 0.25f;
+
+            //Adjust these values to fit your game.
+            joint.spring = 4.5f;
+            joint.damper = 7f;
+            joint.massScale = 4.5f;
+            //////////////Copypaste END
+
             Invoke(nameof(ExecuteGrapple), grappleDelayTime);
         }
         else
@@ -84,7 +107,7 @@ public class Grappling : MonoBehaviour
 
         pm.JumpToPosition(grappleContactPoint, highestPointOnArc);
 
-        Invoke(nameof(StopGrapple), 1f);
+        //Invoke(nameof(StopGrapple), 1f);
 
     }
 
@@ -97,6 +120,7 @@ public class Grappling : MonoBehaviour
         grappleCooldownTimer = grappleCooldown;
 
         lr.enabled = false;
+        Destroy(joint);
     }
 
 

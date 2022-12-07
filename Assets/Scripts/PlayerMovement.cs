@@ -48,10 +48,16 @@ public class PlayerMovement : MonoBehaviour {
     private float verticalInput;
 
     //Grappling
+    [Header("Grappling")]
     public bool freeze;
     public bool activeGrapple; 
     private Vector3 velocityToSet;
     private bool enableMovementOnNextTouch;
+
+    //Wallrunning
+    [Header("Wallrunning")]
+    public float wallrunSpeed;
+    public bool wallrunning;
 
     // Other
     private Rigidbody rb;
@@ -63,6 +69,7 @@ public class PlayerMovement : MonoBehaviour {
         SPRINTING,
         CROUCHING,
         FREEZE,
+        WALLRUNNING,
         AIR
     }
     
@@ -128,8 +135,14 @@ public class PlayerMovement : MonoBehaviour {
     private void StateHandler()
     {
 
+        //Mode - Wallrunning
+        if (wallrunning){
+            state = MovementState.WALLRUNNING;
+            moveSpeed = wallrunSpeed;
+        }
+
         //Mode - Freeze
-        if(freeze){
+        else if(freeze){
             state = MovementState.FREEZE;
             moveSpeed = 0;
             rb.velocity = Vector3.zero;
@@ -166,7 +179,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Movement() 
     {
         //no control while grappling (to be removed with swinging)
-        if (activeGrapple) return;
+        //if (activeGrapple) return;
 
         // calculate movement direction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
