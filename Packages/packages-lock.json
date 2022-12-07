@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.prenominal.realtimecsg": {
+      "version": "https://github.com/LogicalError/realtime-CSG-for-unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3dc9f57139bf4866630aae9e58b5dbc0cd0352d4"
+    },
     "com.unity.burst": {
       "version": "1.7.3",
       "depth": 1,
@@ -10,7 +17,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "1.17.6",
+      "version": "1.17.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
