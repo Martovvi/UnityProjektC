@@ -11,7 +11,11 @@ public class EnemyAI : MonoBehaviour
     
     
     public Transform player;
-
+    
+    // Stats
+    public float maxHealth = 100f;
+    public float health = 100f;
+    
     // Layer Checking
     public LayerMask groundLayer;
     public LayerMask playerLayer;
@@ -30,11 +34,20 @@ public class EnemyAI : MonoBehaviour
     public float attackRange;
     public bool playerInSightRange;
     public bool playerInAttackRange;
+    
+    // Other
+
+    public GameObject blood;
 
     private void Awake()
     {
         player = GameObject.Find("PlayerObject").transform;
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        health = maxHealth;
     }
 
     private void Update()
@@ -108,6 +121,20 @@ public class EnemyAI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
+    }
+
+    // Reduces health on damage
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        Instantiate(blood,
+            new Vector3(transform.position.x, transform.position.y, transform.position.z),
+            transform.rotation);
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void onDrawGizmosSelected()

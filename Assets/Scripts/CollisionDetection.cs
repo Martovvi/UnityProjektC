@@ -7,15 +7,38 @@ public class CollisionDetection : MonoBehaviour
 {
     public WeaponController weapon;
     public GameObject hitParticle;
+    public bool isColliding;
 
+    // BUGGY - Maybe need to use Raycasts instead of colliders
+    // Check if collider just entered a collision
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") && weapon.isAttacking)
+        if (other.CompareTag("Enemy") && weapon.isAttacking && !isColliding)
         {
-            Debug.Log(other.name);
-            Instantiate(hitParticle,
-                new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z),
-                other.transform.rotation);
+            other.gameObject.TryGetComponent<EnemyAI>(out EnemyAI enemyComponent);
+            enemyComponent.TakeDamage(50);
+            isColliding = true;
+            StartCoroutine(ResetCollision());
         }
+    }
+    
+    // BUGGY - Maybe need to use Raycasts instead of colliders
+    // Check if collider is staying on collider
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Enemy") && weapon.isAttacking && !isColliding)
+        {
+            other.gameObject.TryGetComponent<EnemyAI>(out EnemyAI enemyComponent);
+            enemyComponent.TakeDamage(50);
+            isColliding = true;
+            StartCoroutine(ResetCollision());
+        }
+    }
+
+    // Resets collision
+    IEnumerator ResetCollision()
+    {
+        yield return new WaitForSeconds(1);
+        isColliding = false;
     }
 }

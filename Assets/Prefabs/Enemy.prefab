@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5221269962318961241}
   - component: {fileID: 5221269962318961240}
   - component: {fileID: 5221269962318961243}
-  - component: {fileID: 1650006608736032621}
+  - component: {fileID: -3333174364689324195}
   - component: {fileID: 5221269962318961247}
   - component: {fileID: 5221269962318961244}
   m_Layer: 0
@@ -102,7 +102,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &1650006608736032621
+--- !u!65 &-3333174364689324195
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 5221269962318961247}
   player: {fileID: 0}
+  maxHealth: 100
+  health: 100
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -164,6 +166,7 @@ MonoBehaviour:
   attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
+  blood: {fileID: 6890057809132160365, guid: 69cc9ae1a281a7745b9a1ae54c7c06d4, type: 3}
 --- !u!1 &5221269962847072959
 GameObject:
   m_ObjectHideFlags: 0

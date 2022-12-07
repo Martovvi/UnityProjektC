@@ -692,9 +692,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.14586233, y: 0.1884809, z: 1.2130191}
-  m_Center: {x: -0.070366144, y: 0.044652347, z: -0.49337578}
---- !u!54 &1129656710
+  m_Size: {x: 0.23823659, y: 0.3053572, z: 0.9402131}
+  m_Center: {x: -0.014922603, y: -0.0035277463, z: -0.17806074}
+--- !u!54 &1129656714
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -704,8 +704,8 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_AngularDrag: 0
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -2161,9 +2161,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221269962318961244, guid: 4a81b9acf30979043b8beb8cdabd40bb,
         type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5221269962318961244, guid: 4a81b9acf30979043b8beb8cdabd40bb,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1894745417598317239}
+    - target: {fileID: 5221269962318961244, guid: 4a81b9acf30979043b8beb8cdabd40bb,
+        type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5221269962318961246, guid: 4a81b9acf30979043b8beb8cdabd40bb,
         type: 3}
       propertyPath: m_RootOrder
