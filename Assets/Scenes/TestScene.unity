@@ -253,7 +253,7 @@ MonoBehaviour:
   maxGrappleDistance: 25
   grappleDelayTime: 0.1
   overshootYAxis: 1
-  grappleCooldown: 1
+  grappleCooldown: 0.5
   grappleKey: 324
 --- !u!114 &161785428
 MonoBehaviour:
@@ -277,13 +277,15 @@ MonoBehaviour:
   wallJumpUpForce: 7
   wallJumpSideForce: 12
   wallClimbSpeed: 3
-  maxWallRunTime: 1.5
+  maxWallRunTime: 1
   jumpKey: 32
   upwardsRunKey: 304
   downwardsRunKey: 306
   wallCheckDistance: 0.7
   minJumpHeight: 2
-  exitWallTime: 0.2
+  exitWallTime: 0.5
+  useGravity: 0
+  gravityCounterForce: 0
   orientation: {fileID: 2098653290}
 --- !u!4 &219879595 stripped
 Transform:
