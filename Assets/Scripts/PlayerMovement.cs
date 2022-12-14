@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 
 public class PlayerMovement : MonoBehaviour {
-
+    
     // Assingables
     public Transform playerCam;
     public Transform orientation;
@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour {
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
     public KeyCode crouchKey = KeyCode.LeftControl;
+    
+    // Stats
+    public float maxHealth = 100f;
+    public float health = 100f;
     
     // Movement
     [Header("Movement")] 
@@ -91,6 +95,9 @@ public class PlayerMovement : MonoBehaviour {
         
         // Init player Y scale
         startYScale = transform.localScale.y;
+
+        // Init player health
+        health = maxHealth;
     }
     
     private void Update() 
@@ -325,6 +332,17 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         return false;
+    }
+    
+    // Reduces health on damage and kills player
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Project move direction based on angle of slope

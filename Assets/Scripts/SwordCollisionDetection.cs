@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionDetection : MonoBehaviour
+public class SwordCollisionDetection : MonoBehaviour
 {
     public WeaponController weapon;
     public GameObject hitParticle;
