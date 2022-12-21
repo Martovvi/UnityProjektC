@@ -11,7 +11,11 @@ public class EnemyAI : MonoBehaviour
     
     
     public Transform player;
-
+    
+    // Stats
+    public float maxHealth = 100f;
+    public float health = 100f;
+    
     // Layer Checking
     public LayerMask groundLayer;
     public LayerMask playerLayer;
@@ -30,11 +34,26 @@ public class EnemyAI : MonoBehaviour
     public float attackRange;
     public bool playerInSightRange;
     public bool playerInAttackRange;
+    
+    // Other
+
+    public GameObject blood;
+    public GameObject bullet;
+    public Transform shootPoint;
+    public float shootSpeed = 50f;
+    public float timeToShoot = 1.3f;
+    private float originalTime;
 
     private void Awake()
     {
         player = GameObject.Find("PlayerObject").transform;
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        health = maxHealth;
+        originalTime = timeToShoot;
     }
 
     private void Update()
@@ -94,10 +113,10 @@ public class EnemyAI : MonoBehaviour
         // Check if AI has attacked already and attack
         if (!alreadyAttacked)
         {
-            // Attack code here
-            //
-            //
+            // Attack code
+            ShootPlayer();
             Debug.Log("Attack!");
+            // End attack code
             
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -108,6 +127,27 @@ public class EnemyAI : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
+    }
+    
+    // Reduces health on damage
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        Instantiate(blood,
+            new Vector3(transform.position.x, transform.position.y, transform.position.z),
+            transform.rotation);
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void ShootPlayer()
+    {
+        GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
+        Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward*shootSpeed, ForceMode.VelocityChange);
     }
 
     private void onDrawGizmosSelected()
