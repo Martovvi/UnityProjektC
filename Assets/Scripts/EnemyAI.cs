@@ -40,6 +40,7 @@ public class EnemyAI : MonoBehaviour
     public GameObject blood;
     public GameObject bullet;
     public Transform shootPoint;
+    public Animator animator;
     public float shootSpeed = 50f;
     public float timeToShoot = 1.3f;
     private float originalTime;
@@ -48,6 +49,7 @@ public class EnemyAI : MonoBehaviour
     {
         player = GameObject.Find("PlayerObject").transform;
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -65,6 +67,8 @@ public class EnemyAI : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patrolling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        
+        animator.SetFloat("Move", agent.velocity.magnitude);
     }
 
     // Default enemy state when the player has not been detected
