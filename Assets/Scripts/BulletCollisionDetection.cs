@@ -17,7 +17,9 @@ public class BulletCollisionDetection : MonoBehaviour
             playerComponent.TakeDamage(10);
             isColliding = true;
             StartCoroutine(ResetCollision());
+            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 
     // Resets collision

@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody rb;
     private Vector3 moveDirection;
     public MovementState state;
+    public GameObject blood;
     public enum MovementState
     {
         WALKING,
@@ -338,6 +339,10 @@ public class PlayerMovement : MonoBehaviour {
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
+        
+        Instantiate(blood,
+            new Vector3(transform.position.x, transform.position.y, transform.position.z),
+            transform.rotation);
 
         if (health <= 0)
         {

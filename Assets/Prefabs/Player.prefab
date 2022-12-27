@@ -640,6 +640,8 @@ MonoBehaviour:
   jumpKey: 32
   sprintKey: 304
   crouchKey: 306
+  maxHealth: 100
+  health: 100
   walkSpeed: 8
   sprintSpeed: 15
   groundDrag: 5
@@ -654,6 +656,7 @@ MonoBehaviour:
     m_Bits: 64
   maxSlopeAngle: 40
   state: 0
+  blood: {fileID: 6890057809132160365, guid: 69cc9ae1a281a7745b9a1ae54c7c06d4, type: 3}
 --- !u!1 &1894745419066102456
 GameObject:
   m_ObjectHideFlags: 0
