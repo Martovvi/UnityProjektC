@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
-    
-    
+
+
     public Transform player;
     
     // Stats
@@ -44,12 +44,17 @@ public class EnemyAI : MonoBehaviour
     public float shootSpeed = 50f;
     public float timeToShoot = 1.3f;
     private float originalTime;
+    private Rigidbody[] ragdollRigidbodies;
+    private CapsuleCollider capsuleCollider;
+    private BoxCollider boxCollider;
 
     private void Awake()
     {
         player = GameObject.Find("PlayerObject").transform;
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
+        DisableRagdoll();
     }
 
     private void Start()
@@ -143,7 +148,7 @@ public class EnemyAI : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            EnableRagdoll();
         }
     }
 
@@ -152,6 +157,30 @@ public class EnemyAI : MonoBehaviour
         GameObject currentBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody rb = currentBullet.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward*shootSpeed, ForceMode.VelocityChange);
+    }
+
+    private void DisableRagdoll()
+    {
+        foreach (var rigidbody in ragdollRigidbodies)
+        {
+            rigidbody.isKinematic = true;
+        }
+
+        this.enabled = true;
+        animator.enabled = true;
+        agent.enabled = true;
+    }
+
+    private void EnableRagdoll()
+    {
+        foreach (var rigidbody in ragdollRigidbodies)
+        {
+            rigidbody.isKinematic = false;
+        }
+        this.enabled = false;
+        animator.enabled = false;
+        agent.enabled = false;
+        Physics.IgnoreLayerCollision(0, 3);
     }
 
     private void onDrawGizmosSelected()
