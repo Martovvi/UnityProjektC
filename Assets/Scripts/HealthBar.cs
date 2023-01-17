@@ -20,6 +20,7 @@ public class HealthBar : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        backHealthBar.fillAmount = frontHealthBar.fillAmount;
         digits = GetComponentInChildren<TextMeshProUGUI>();
     }
 
@@ -39,8 +40,8 @@ public class HealthBar : MonoBehaviour
         if (fillB > healthNormalized)
         {
             frontHealthBar.fillAmount = healthNormalized;
-            Color backHealthColor = new Color(0.49f, 0.06f, 0.06f, 1f);
-            backHealthBar.color = backHealthColor;
+            Color damageHealthColor = new Color(0.49f, 0.06f, 0.06f, 1f);
+            backHealthBar.color = damageHealthColor;
             lerpTimer += Time.deltaTime;
             float percentComplete = lerpTimer / chipSpeed;
             percentComplete *= percentComplete;
@@ -49,11 +50,12 @@ public class HealthBar : MonoBehaviour
         if (fillF < healthNormalized)
         {
             frontHealthBar.fillAmount = healthNormalized;
-            Color backHealthColor = new Color(0.06f, 0.49f, 0.06f, 1f);
-            backHealthBar.color = backHealthColor;
+            Color healHealthColor = new Color(0.06f, 0.49f, 0.06f, 1f);
+            backHealthBar.color = healHealthColor;
             lerpTimer += Time.deltaTime;
             float percentComplete = lerpTimer / chipSpeed;
             percentComplete *= percentComplete;
+            backHealthBar.fillAmount = healthNormalized;
             frontHealthBar.fillAmount = Mathf.Lerp(fillF, backHealthBar.fillAmount, percentComplete);
         }
     }

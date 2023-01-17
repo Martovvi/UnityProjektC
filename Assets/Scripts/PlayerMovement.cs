@@ -367,4 +367,14 @@ public class PlayerMovement : MonoBehaviour {
         //Gizmos.DrawRay(transform.position, 0.7f * Vector3.up * playerHeight);
         Gizmos.DrawSphere(transform.position + new Vector3(0,(playerHeight * 0.58f), 0), playerRadius);
     }
+    public void Heal(float amount)
+    {
+        healthBar.Heal(amount);
+        health += amount;
+        
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
 }
