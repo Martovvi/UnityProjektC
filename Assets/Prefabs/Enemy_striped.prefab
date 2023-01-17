@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5221269962318961244}
   - component: {fileID: 4720473037101586833}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_striped
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 8
+  m_Speed: 12
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 500
@@ -150,8 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 5221269962318961247}
   player: {fileID: 0}
-  maxHealth: 100
-  health: 100
+  maxHealth: 200
+  health: 200
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -265,6 +265,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f9880de239e8a2d4881e077e516877bd, type: 2}
+    - target: {fileID: 13700000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 923d25b811b80a64c96ac2f3f8d6747f, type: 2}
+    - target: {fileID: 13700002, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 923d25b811b80a64c96ac2f3f8d6747f, type: 2}
+    - target: {fileID: 13700004, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 923d25b811b80a64c96ac2f3f8d6747f, type: 2}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7aea2d469d67de44f9dd680a5088c739, type: 3}
