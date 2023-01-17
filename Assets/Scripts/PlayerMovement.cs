@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour {
     // Stats
     public float maxHealth = 100f;
     public float health = 100f;
+    public bool isDead = false;
     
     // Movement
     [Header("Movement")] 
@@ -62,6 +63,7 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 moveDirection;
     public MovementState state;
     public GameObject blood;
+    public HealthBar healthBar;
     public enum MovementState
     {
         WALKING,
@@ -338,6 +340,7 @@ public class PlayerMovement : MonoBehaviour {
     // Reduces health on damage and kills player
     public void TakeDamage(float damageAmount)
     {
+        healthBar.Damage(damageAmount);
         health -= damageAmount;
         
         Instantiate(blood,
@@ -346,7 +349,8 @@ public class PlayerMovement : MonoBehaviour {
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            this.enabled = false;
+            isDead = true;
         }
     }
 
