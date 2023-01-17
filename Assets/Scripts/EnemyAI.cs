@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
 
 
     public Transform player;
+    private PlayerMovement playerScript;
     
     // Stats
     public float maxHealth = 100f;
@@ -51,6 +52,7 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("PlayerObject").transform;
+        playerScript = player.GetComponentInChildren<PlayerMovement>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
@@ -107,28 +109,33 @@ public class EnemyAI : MonoBehaviour
     // The enemies will be on alert and chase the player
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        if (playerScript.isDead == false)
+        {
+            agent.SetDestination(player.position);
+        }
     }
     
     // The enemies are close enough to the player to attack him
     private void AttackPlayer()
     {
-        // Make sure enemy doesn't move
-        agent.SetDestination(transform.position);
-        
-        // Look at player when attacking
-        transform.LookAt(player);
-
-        // Check if AI has attacked already and attack
-        if (!alreadyAttacked)
+        if (playerScript.isDead == false)
         {
-            // Attack code
-            ShootPlayer();
-            Debug.Log("Attack!");
-            // End attack code
+            // Make sure enemy doesn't move
+            agent.SetDestination(transform.position);
+        
+            // Look at player when attacking
+            transform.LookAt(player);
+
+            // Check if AI has attacked already and attack
+            if (!alreadyAttacked)
+            {
+                // Attack code
+                ShootPlayer();
+                // End attack code
             
-            alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+                alreadyAttacked = true;
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            }
         }
     }
 
@@ -180,7 +187,7 @@ public class EnemyAI : MonoBehaviour
         this.enabled = false;
         animator.enabled = false;
         agent.enabled = false;
-        Physics.IgnoreLayerCollision(0, 3);
+        Physics.IgnoreLayerCollision(3, 10);
     }
 
     private void onDrawGizmosSelected()
