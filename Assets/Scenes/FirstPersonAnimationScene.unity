@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &62052021 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3558266254239842323, guid: 1149d900914114643833e31b2cccf26b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1155284383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &84573938
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +362,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86608630}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!120 &181945466 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 3558266253115799799, guid: 1149d900914114643833e31b2cccf26b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1155284383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &207049583 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1894745417591191188, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119276737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &228749355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1894745418574506602, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119276737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &234897371
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +630,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246819826}
   m_CullTransparentMesh: 1
+--- !u!4 &300616998 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5314867324676095812, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119276737}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &551905875
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,9 +770,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551905875}
   m_CullTransparentMesh: 1
---- !u!1 &228749355 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1894745418574506602, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+--- !u!4 &613814635 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1894745418464372899, guid: eb164dfe6a375e641bb712b1bd6c17bc,
     type: 3}
   m_PrefabInstance: {fileID: 2119276737}
   m_PrefabAsset: {fileID: 0}
@@ -1581,41 +1611,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033681354}
   m_CullTransparentMesh: 1
---- !u!1 &1129656705 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4370980550239370902, guid: eb164dfe6a375e641bb712b1bd6c17bc,
-    type: 3}
-  m_PrefabInstance: {fileID: 2119276737}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1129656708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129656705}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.23823659, y: 0.3053572, z: 0.9402131}
-  m_Center: {x: -0.014922603, y: -0.0035277463, z: -0.17806074}
---- !u!54 &1129656714
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129656705}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1133786417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1708,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133786417}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1155284383
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 300616998}
+    m_Modifications:
+    - target: {fileID: 3558266253115799794, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_Name
+      value: GrappleGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9699993
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.33999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558266253115799795, guid: 1149d900914114643833e31b2cccf26b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1149d900914114643833e31b2cccf26b, type: 3}
 --- !u!1 &1248001425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,6 +3692,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1894745418574506612, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+        type: 3}
+      propertyPath: wallrunSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1894745418574506614, guid: eb164dfe6a375e641bb712b1bd6c17bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3706,6 +3775,61 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2119276737}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1894745417598317245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228749355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5afed0e857362ba42a9ed450b6aafacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatIsWall:
+    serializedVersion: 2
+    m_Bits: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  wallRunForce: 500
+  wallJumpUpForce: 8
+  wallJumpSideForce: 12
+  wallClimbSpeed: 2
+  maxWallRunTime: 5
+  jumpKey: 32
+  upwardsRunKey: 304
+  downwardsRunKey: 306
+  wallCheckDistance: 1
+  minJumpHeight: 2
+  exitWallTime: 1
+  useGravity: 0
+  gravityCounterForce: 0
+  orientation: {fileID: 613814635}
+--- !u!114 &1894745417598317246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228749355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5848baf74b8c54ea855f53fee16f56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 207049583}
+  gunTip: {fileID: 62052021}
+  grappleableSurface:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  lr: {fileID: 181945466}
+  maxGrappleDistance: 40
+  grappleDelayTime: 0
+  overshootYAxis: 0
+  grappleCooldown: 0
+  grappleKey: 324
 --- !u!1001 &5221269963521186538
 PrefabInstance:
   m_ObjectHideFlags: 0
