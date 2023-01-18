@@ -10,6 +10,7 @@ public class Grappling : MonoBehaviour
     public Transform gunTip;
     public LayerMask grappleableSurface;
     public LineRenderer lr;
+    public Animator animator;
 
     [Header("Grappling")]
     public float maxGrappleDistance;
@@ -55,6 +56,8 @@ public class Grappling : MonoBehaviour
         if (grappleCooldownTimer > 0) return;
 
         grappling = true;
+
+        animator.SetTrigger("OnGrappleStart");
 
         //pm.freeze = true;
 
@@ -113,6 +116,9 @@ public class Grappling : MonoBehaviour
 
     public void StopGrapple()
     {
+
+        animator.SetTrigger("OnGrappleStop");
+
         pm.freeze = false;
         
         grappling = false;
