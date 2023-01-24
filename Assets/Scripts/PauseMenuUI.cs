@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuUI : MonoBehaviour
 {
     public GameObject PauseMenu;
+    public GameObject[] UIElements;
 
     public void Awake()
     {
@@ -18,6 +19,11 @@ public class PauseMenuUI : MonoBehaviour
         PauseMenu.SetActive(true);
 
         Time.timeScale = 0;
+        
+        for (int i = 0; i < UIElements.Length; i++)
+        {
+            UIElements[i].SetActive(false);
+        }
 
     }
 
@@ -25,6 +31,10 @@ public class PauseMenuUI : MonoBehaviour
     {
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
+        for (int i = 0; i < UIElements.Length; i++)
+        {
+            UIElements[i].SetActive(true);
+        }
 
     }
     public void BackToMainMenu()

@@ -2,6 +2,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Cursor = UnityEngine.Cursor;
 
@@ -349,8 +350,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (health <= 0)
         {
-            this.enabled = false;
-            isDead = true;
+            Death();
         }
     }
 
@@ -376,5 +376,12 @@ public class PlayerMovement : MonoBehaviour {
         {
             health = maxHealth;
         }
+    }
+    
+    private void Death()
+    {
+        isDead = true;
+        this.enabled = false;
+        FindObjectOfType<GameManager>().GameOver(true);
     }
 }
