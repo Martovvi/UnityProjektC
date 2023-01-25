@@ -59,6 +59,18 @@ public class PlayerMovement : MonoBehaviour {
     private float horizontalInput;
     private float verticalInput;
 
+    //Grappling
+    [Header("Grappling")]
+    public bool freeze;
+    public bool activeGrapple; 
+    private Vector3 velocityToSet;
+    private bool enableMovementOnNextTouch;
+
+    //Wallrunning
+    [Header("Wallrunning")]
+    public float wallrunSpeed;
+    public bool wallrunning;
+
     // Other
     private Rigidbody rb;
     private Vector3 moveDirection;
@@ -70,6 +82,8 @@ public class PlayerMovement : MonoBehaviour {
         WALKING,
         SPRINTING,
         CROUCHING,
+        FREEZE,
+        WALLRUNNING,
         AIR
     }
     
@@ -138,8 +152,22 @@ public class PlayerMovement : MonoBehaviour {
     // Player movement state machine
     private void StateHandler()
     {
+
+        //Mode - Wallrunning
+        if (wallrunning){
+            state = MovementState.WALLRUNNING;
+            moveSpeed = wallrunSpeed;
+        }
+
+        //Mode - Freeze
+        else if(freeze){
+            state = MovementState.FREEZE;
+            moveSpeed = 0;
+            rb.velocity = Vector3.zero;
+        }
+
         // Mode - Crouching
-        if (grounded && Input.GetKey(crouchKey))
+        else if (grounded && Input.GetKey(crouchKey))
         {
             state = MovementState.CROUCHING;
             moveSpeed = crouchSpeed;
@@ -253,6 +281,9 @@ public class PlayerMovement : MonoBehaviour {
     // Limits player speed
     private void SpeedControl()
     {
+        //no limit when grappling
+        if (activeGrapple) return;
+
         // limiting speed on slope
         if (OnSlope() && !exitingSlope)
         {
@@ -383,5 +414,47 @@ public class PlayerMovement : MonoBehaviour {
         isDead = true;
         this.enabled = false;
         FindObjectOfType<GameManager>().GameOver(true);
+    }
+
+    //Grapplefunction (no swinging included)
+    public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight){
+        activeGrapple = true;
+
+        velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
+        Invoke(nameof(SetVelocity), 0.1f);
+    }
+
+    //supprt function for JumpToPosition
+    private void SetVelocity(){
+        enableMovementOnNextTouch = true;
+        rb.velocity = velocityToSet;
+    }
+
+    //reenable movement after grappling
+    public void ResetRestrictions(){
+        activeGrapple = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(enableMovementOnNextTouch){
+            enableMovementOnNextTouch = false;
+            ResetRestrictions();
+            GetComponent<Grappling>().StopGrapple();
+        }
+    }
+
+    //Grappling: Copied from Tutorial - will be deleted with swinging implementation
+    public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+    {
+        float gravity = Physics.gravity.y;
+        float displacementY = endPoint.y - startPoint.y;
+        Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
+
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
+        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity) 
+            + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
+
+        return velocityXZ + velocityY;
     }
 }
