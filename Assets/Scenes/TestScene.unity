@@ -6300,6 +6300,26 @@ PrefabInstance:
       propertyPath: swordAttackSound
       value: 
       objectReference: {fileID: 8300000, guid: 81d14affd553f96449be87b34ad08a77, type: 3}
+    - target: {fileID: 1894745417105371524, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894745417105371524, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894745417105371524, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894745417105371524, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1894745417105371525, guid: eb164dfe6a375e641bb712b1bd6c17bc,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -6462,3 +6482,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb164dfe6a375e641bb712b1bd6c17bc, type: 3}
+--- !u!1 &2119276738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1894745417105371527, guid: eb164dfe6a375e641bb712b1bd6c17bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119276737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2119276739
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119276738}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2dd0ad3490787348a47b5cb93795d0c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

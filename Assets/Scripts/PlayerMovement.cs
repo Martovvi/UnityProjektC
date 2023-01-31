@@ -412,6 +412,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Death()
     {
         isDead = true;
+        playerCam.GetComponentInChildren<Animator>().SetTrigger("Death");
         this.enabled = false;
         FindObjectOfType<GameManager>().GameOver(true);
     }
