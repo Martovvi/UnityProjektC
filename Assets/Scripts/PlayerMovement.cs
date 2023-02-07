@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject blood;
     public HealthBar healthBar;
     public bool isGamePaused = false;
+    public GameManager gameManager;
     public enum MovementState
     {
         WALKING,
@@ -122,19 +123,22 @@ public class PlayerMovement : MonoBehaviour {
     
     private void Update() 
     {
-        if (!isGamePaused)
+        if (!isGamePaused && !isDead && !gameManager.isLevelCompleted)
         { 
             Look();
             MyInput();
+            GroundCheck();
+            SpeedControl();
+            StateHandler();
         }
-        GroundCheck();
-        SpeedControl();
-        StateHandler();
     }
 
     private void FixedUpdate() 
     {
-        Movement();
+        if (!isGamePaused && !isDead && !gameManager.isLevelCompleted)
+        {
+            Movement();
+        }
     }
 
     // User input (should be it's own class)

@@ -11,12 +11,13 @@ public class WeaponController : MonoBehaviour
     public AudioClip swordAttackSound;
     public bool isAttacking = false;
     public PlayerMovement playerScript;
-    
+    public GameManager gameManager;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (canAttack && !playerScript.isGamePaused)
+            if (canAttack && !playerScript.isGamePaused && !playerScript.isDead && !gameManager.isLevelCompleted)
             {
                 SwordAttack();
             }

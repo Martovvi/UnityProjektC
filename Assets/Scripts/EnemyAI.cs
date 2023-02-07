@@ -12,11 +12,13 @@ public class EnemyAI : MonoBehaviour
 
     public Transform player;
     private PlayerMovement playerScript;
+
+    [SerializeField] private GameManager gameManager;
     
     // Stats
     public float maxHealth = 100f;
     public float health = 100f;
-    
+
     // Layer Checking
     public LayerMask groundLayer;
     public LayerMask playerLayer;
@@ -57,6 +59,7 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
         DisableRagdoll();
+        gameManager.enemyCount++;
     }
 
     private void Start()
@@ -156,6 +159,8 @@ public class EnemyAI : MonoBehaviour
         if (health <= 0)
         {
             EnableRagdoll();
+            gameManager.enemyCount--;
+            gameManager.LevelComplete();
         }
     }
 

@@ -8,6 +8,7 @@ public class PauseMenuUI : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject[] UIElements;
     public PlayerMovement playerScript;
+    public GameManager gameManager;
     [SerializeField] private AudioSource openMenuSound;
     [SerializeField] private AudioSource closeMenuSound;
 
@@ -52,7 +53,10 @@ public class PauseMenuUI : MonoBehaviour
 
     public void ResumeGame()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        if (!gameManager.isLevelCompleted)
+        { 
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         playerScript.isGamePaused = false;
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
