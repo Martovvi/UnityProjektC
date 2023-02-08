@@ -28,7 +28,7 @@ public class WeaponController : MonoBehaviour
         isAttacking = true;
         canAttack = false;
         Animator anim = weaponSword.GetComponent<Animator>();
-        anim.SetTrigger("Attack");
+        anim.SetTrigger("OnSwordSwing");
         StartCoroutine(ResetAttackCooldown());
         AudioSource audioSrc = GetComponent<AudioSource>();
         audioSrc.PlayOneShot(swordAttackSound);
