@@ -6,14 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameOverUI;
     private bool isGameOver = false;
-    
+    public bool isLevelCompleted = false;
+    public int enemyCount = 0;
+    public GameObject gameOverUI;
+    public GameObject levelCompletedUI;
+
     public static GameManager Instance { get; private set; }
 
     private void Awake()
     {
         Instance = this;
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -30,8 +34,19 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
-    public bool IsGameOver()
+    public void LevelComplete()
     {
-        return isGameOver;
+        if (enemyCount == 0)
+        {
+            isLevelCompleted = true;
+            levelCompletedUI.SetActive(true);
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
