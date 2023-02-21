@@ -43,6 +43,7 @@ public class Grappling : MonoBehaviour
 
         if (grappleCooldownTimer > 0)
             grappleCooldownTimer -= Time.deltaTime;
+        Spring spring =  new Spring();
     }
 
     private void LateUpdate()
@@ -70,8 +71,6 @@ public class Grappling : MonoBehaviour
             joint = pm.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = grappleContactPoint;
-            
-            //////////Copypasta
 
             float distanceFromPoint = Vector3.Distance(pm.transform.position, grappleContactPoint);
 
@@ -83,7 +82,6 @@ public class Grappling : MonoBehaviour
             joint.spring = 4.5f;
             joint.damper = 7f;
             joint.massScale = 4.5f;
-            //////////////Copypaste END
 
             Invoke(nameof(ExecuteGrapple), grappleDelayTime);
         }
