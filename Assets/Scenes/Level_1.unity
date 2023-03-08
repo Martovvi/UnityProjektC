@@ -1243,10 +1243,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 783342152663431525, guid: 09ca3ffcc76dcf045bf7ccb98fadea7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2019153571343643560, guid: 09ca3ffcc76dcf045bf7ccb98fadea7f,
         type: 3}
       propertyPath: m_Name
       value: HealthPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019153571343643560, guid: 09ca3ffcc76dcf045bf7ccb98fadea7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5237522232789070771, guid: 09ca3ffcc76dcf045bf7ccb98fadea7f,
         type: 3}
@@ -1302,6 +1312,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521553069920929933, guid: 09ca3ffcc76dcf045bf7ccb98fadea7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661781958609453421, guid: 09ca3ffcc76dcf045bf7ccb98fadea7f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09ca3ffcc76dcf045bf7ccb98fadea7f, type: 3}
@@ -10525,7 +10545,7 @@ GameObject:
   - component: {fileID: 1451648049}
   - component: {fileID: 1451648048}
   - component: {fileID: 1451648047}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15360,7 +15380,7 @@ GameObject:
   - component: {fileID: 2028004859}
   - component: {fileID: 2028004858}
   - component: {fileID: 2028004857}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -33,8 +33,8 @@ public class PlayerMovement : MonoBehaviour {
     // Jumping
     [Header("Jumping")]
     public float jumpForce;
-    private bool readyToJump;
     public float airMultiplier;
+    private bool readyToJump;
 
     // Crouching
     [Header("Crouching")] 
@@ -72,13 +72,17 @@ public class PlayerMovement : MonoBehaviour {
     public bool wallrunning;
 
     // Other
-    private Rigidbody rb;
-    private Vector3 moveDirection;
     public MovementState state;
     public GameObject blood;
     public HealthBar healthBar;
     public bool isGamePaused = false;
     public GameManager gameManager;
+    private Rigidbody rb;
+    private Vector3 moveDirection;
+    [SerializeField] private AudioClip[] hurtSounds;
+    [SerializeField] private AudioClip deathSound;
+    private AudioSource audioSource;
+    
     public enum MovementState
     {
         WALKING,
@@ -119,6 +123,10 @@ public class PlayerMovement : MonoBehaviour {
 
         // Init player health
         health = maxHealth;
+        
+        //Audio stuff
+        audioSource = GetComponent<AudioSource>();
+
     }
     
     private void Update() 
@@ -377,6 +385,18 @@ public class PlayerMovement : MonoBehaviour {
 
         return false;
     }
+
+    private void PlayRandomHurtSound()
+    {
+        AudioClip clip = hurtSounds[UnityEngine.Random.Range(0, hurtSounds.Length)];
+        audioSource.PlayOneShot(clip);
+    }
+
+    private void PlayDeathSound()
+    {
+        AudioClip clip = deathSound;
+        audioSource.PlayOneShot(clip);
+    }
     
     // Reduces health on damage and kills player
     public void TakeDamage(float damageAmount)
@@ -387,6 +407,8 @@ public class PlayerMovement : MonoBehaviour {
         Instantiate(blood,
             new Vector3(transform.position.x, transform.position.y, transform.position.z),
             transform.rotation);
+        
+        PlayRandomHurtSound();
 
         if (health <= 0)
         {
@@ -424,6 +446,7 @@ public class PlayerMovement : MonoBehaviour {
         playerCam.GetComponentInChildren<Animator>().SetTrigger("Death");
         this.enabled = false;
         FindObjectOfType<GameManager>().GameOver(true);
+        PlayDeathSound();
     }
 
     //Grapplefunction (no swinging included)
