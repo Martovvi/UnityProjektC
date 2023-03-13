@@ -15,8 +15,8 @@ public class WeaponController : MonoBehaviour
     private int hitCount;
     private Animator anim;
     float lastClickedTime = 0f;
-    public float minAnimationDuration = 0.1f;
-    float maxComboDelay = 2f;
+    public float minAnimationDuration = 0.5f;
+    float maxComboDelay = 1.2f;
 
 
     private void Start()
@@ -77,25 +77,9 @@ public class WeaponController : MonoBehaviour
 
     void ResetAnimateVariables()
     {
-        //Debug.Log(anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        // if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration && anim.GetBool("OnSwordSwing1"))
-        // {
-            
-        //     Debug.Log("hit1 reset" + anim.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        //     anim.SetBool("OnSwordSwing1", false);
-        // }
-        // if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration && anim.GetCurrentAnimatorStateInfo(0).IsName("OnSwordSwing2"))
-        // {
-        //     anim.SetBool("OnSwordSwing2", false);
-        // }
-        // if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration && anim.GetCurrentAnimatorStateInfo(0).IsName("OnSwordSwing3"))
-        // {
-        //     anim.SetBool("OnSwordSwing3", false);
-        //     hitCount = 0;
-        // }
 
 
-        if (Time.time - lastClickedTime > maxComboDelay)
+        if (Time.time - lastClickedTime > maxComboDelay && hitCount > 0)
         {
             hitCount = 0;
             anim.SetTrigger("ExitSwordCombo");
@@ -111,22 +95,34 @@ public class WeaponController : MonoBehaviour
         Debug.Log("hit="+hitCount);
         if (hitCount == 1)
         {
+            Debug.Log("hit1 entered");
+            
             anim.SetTrigger("OnSwordSwing1");
         }
         
-        Debug.Log("Timecheck2 ="+ (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration));
-        Debug.Log("GetBool2=" + anim.GetBool("OnSwordSwing1"));
-        if (hitCount >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration /*&& anim.GetBool("OnSwordSwing1")*/)
+        //Debug.Log("Timecheck2 ="+ (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration));
+        //Debug.Log("GetBool2=" + anim.GetBool("OnSwordSwing1"));
+        if (hitCount == 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration /*&& anim.GetBool("OnSwordSwing1")*/)
         {
             Debug.Log("hit2 entered");
             //anim.SetBool("OnSwordSwing1", false);
             anim.SetTrigger("OnSwordSwing2");
         }
-        if (hitCount >= 3 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration && anim.GetBool("OnSwordSwing2"))
+        if (hitCount == 3 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > minAnimationDuration /*&& anim.GetBool("OnSwordSwing2")*/)
         {
+            Debug.Log("hit3 entered");
             //anim.SetBool("OnSwordSwing2", false);
             anim.SetTrigger("OnSwordSwing3");
+            hitCount = 0;
+            //StartCoroutine(ExitSwordCombo());
         }
+    }
+
+    IEnumerator ExitSwordCombo()
+    {
+        yield return new WaitForSeconds(minAnimationDuration);
+        anim.SetTrigger("ExitSwordCombo");
+        hitCount = 0;
     }
 
 }
