@@ -236,9 +236,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221269962318961244, guid: 4a81b9acf30979043b8beb8cdabd40bb,
         type: 3}
+      propertyPath: audioSrc
+      value: 
+      objectReference: {fileID: 1424395773}
+    - target: {fileID: 5221269962318961244, guid: 4a81b9acf30979043b8beb8cdabd40bb,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1817349340}
+    - target: {fileID: 5221269962318961244, guid: 4a81b9acf30979043b8beb8cdabd40bb,
+        type: 3}
+      propertyPath: swordConnectsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bd762802da0096947a3d1fc5e6d8610b, type: 3}
     - target: {fileID: 5221269962318961246, guid: 4a81b9acf30979043b8beb8cdabd40bb,
         type: 3}
       propertyPath: m_RootOrder
@@ -3237,9 +3247,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221269962318961244, guid: 0f7fbca330673184eb6b88f314b96c69,
         type: 3}
+      propertyPath: audioSrc
+      value: 
+      objectReference: {fileID: 1424395773}
+    - target: {fileID: 5221269962318961244, guid: 0f7fbca330673184eb6b88f314b96c69,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1817349340}
+    - target: {fileID: 5221269962318961244, guid: 0f7fbca330673184eb6b88f314b96c69,
+        type: 3}
+      propertyPath: swordConnectsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bd762802da0096947a3d1fc5e6d8610b, type: 3}
     - target: {fileID: 5221269962318961246, guid: 0f7fbca330673184eb6b88f314b96c69,
         type: 3}
       propertyPath: m_RootOrder
@@ -4341,9 +4361,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221269962318961244, guid: 2e4f7a04e0af88c499464cbfc38d6fbe,
         type: 3}
+      propertyPath: audioSrc
+      value: 
+      objectReference: {fileID: 1424395773}
+    - target: {fileID: 5221269962318961244, guid: 2e4f7a04e0af88c499464cbfc38d6fbe,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1817349340}
+    - target: {fileID: 5221269962318961244, guid: 2e4f7a04e0af88c499464cbfc38d6fbe,
+        type: 3}
+      propertyPath: swordConnectsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bd762802da0096947a3d1fc5e6d8610b, type: 3}
     - target: {fileID: 5221269962318961246, guid: 2e4f7a04e0af88c499464cbfc38d6fbe,
         type: 3}
       propertyPath: m_RootOrder
@@ -9780,6 +9810,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410099556}
   m_Mesh: {fileID: 4300028, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!82 &1424395773 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9123713284864360369, guid: d035ccfdb935e4242ba49a89c5b99026,
+    type: 3}
+  m_PrefabInstance: {fileID: 4632845570897820205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1425265307
 GameObject:
   m_ObjectHideFlags: 0
@@ -10643,9 +10679,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221269962318961244, guid: b3df8b2abfb5a304386b3bbc0b692a79,
         type: 3}
+      propertyPath: audioSrc
+      value: 
+      objectReference: {fileID: 1424395773}
+    - target: {fileID: 5221269962318961244, guid: b3df8b2abfb5a304386b3bbc0b692a79,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1817349340}
+    - target: {fileID: 5221269962318961244, guid: b3df8b2abfb5a304386b3bbc0b692a79,
+        type: 3}
+      propertyPath: swordConnectsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bd762802da0096947a3d1fc5e6d8610b, type: 3}
     - target: {fileID: 5221269962318961246, guid: b3df8b2abfb5a304386b3bbc0b692a79,
         type: 3}
       propertyPath: m_RootOrder
@@ -11307,9 +11353,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5221269962318961244, guid: ca96e41c16bb7b14b820f5c4778bcd93,
         type: 3}
+      propertyPath: audioSrc
+      value: 
+      objectReference: {fileID: 1424395773}
+    - target: {fileID: 5221269962318961244, guid: ca96e41c16bb7b14b820f5c4778bcd93,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1817349340}
+    - target: {fileID: 5221269962318961244, guid: ca96e41c16bb7b14b820f5c4778bcd93,
+        type: 3}
+      propertyPath: swordConnectsSound
+      value: 
+      objectReference: {fileID: 8300000, guid: bd762802da0096947a3d1fc5e6d8610b, type: 3}
     - target: {fileID: 5221269962318961246, guid: ca96e41c16bb7b14b820f5c4778bcd93,
         type: 3}
       propertyPath: m_RootOrder
@@ -16403,6 +16459,11 @@ PrefabInstance:
       propertyPath: weaponSword
       value: 
       objectReference: {fileID: 1160858676}
+    - target: {fileID: 5328903999241357500, guid: d035ccfdb935e4242ba49a89c5b99026,
+        type: 3}
+      propertyPath: swordAttackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e8788ca20c2f7e4c89ae594bc42309f, type: 3}
     - target: {fileID: 6485271884177796074, guid: d035ccfdb935e4242ba49a89c5b99026,
         type: 3}
       propertyPath: m_RootOrder

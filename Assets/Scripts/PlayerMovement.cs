@@ -88,6 +88,9 @@ public class PlayerMovement : MonoBehaviour {
         WALLRUNNING,
         AIR
     }
+
+    //Audio
+    AudioSource audioSrc;
     
     // Rotation and look
     private float xRotation;
@@ -99,6 +102,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         isGamePaused = false;
+        audioSrc = GetComponent<AudioSource>();
     }
     
     void Start()

@@ -28,6 +28,13 @@ public class Grappling : MonoBehaviour
     public KeyCode grappleKey = KeyCode.Mouse1;
 
     private bool grappling;
+    private AudioSource audioSrc;
+    public AudioClip GrappleExtend;
+    public AudioClip GrappleRetract;
+
+    private void Awake(){
+        audioSrc = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -54,6 +61,7 @@ public class Grappling : MonoBehaviour
     private void StartGrapple()
     {
         if (grappleCooldownTimer > 0) return;
+        audioSrc.PlayOneShot(GrappleExtend);
 
         grappling = true;
 
@@ -99,6 +107,10 @@ public class Grappling : MonoBehaviour
 
     private void ExecuteGrapple()
     {
+
+        //audioSrc.loop = true;
+        audioSrc.PlayOneShot(GrappleRetract);
+
         pm.freeze = false;
 
         Vector3 lowestPoint = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
