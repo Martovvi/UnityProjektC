@@ -88,10 +88,7 @@ public class PlayerMovement : MonoBehaviour {
         WALLRUNNING,
         AIR
     }
-
-    //Audio
-    AudioSource audioSrc;
-    
+     
     // Rotation and look
     private float xRotation;
     private float sensitivity = 50f;
@@ -102,7 +99,6 @@ public class PlayerMovement : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         isGamePaused = false;
-        audioSrc = GetComponent<AudioSource>();
     }
     
     void Start()
@@ -470,5 +466,13 @@ public class PlayerMovement : MonoBehaviour {
             + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
 
         return velocityXZ + velocityY;
+    }
+
+    public bool getGrounded(){
+        return grounded;
+    }
+
+    public float getVelocity(){
+        return rb.velocity.magnitude;
     }
 }
