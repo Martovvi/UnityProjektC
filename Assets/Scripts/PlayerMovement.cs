@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour {
     public float playerRadius;
     public LayerMask ground;
     private bool grounded;
+    public bool metalGround;
     
     // Slope Handling
     [Header("Slope Handling")]
@@ -447,6 +448,13 @@ public class PlayerMovement : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.collider.gameObject.GetComponent<Renderer>().material.name.StartsWith("Cargo"));
+        if(collision.collider.gameObject.GetComponent<Renderer>().material.name.StartsWith("Cargo") || collision.collider.gameObject.GetComponent<Renderer>().material.name.StartsWith("Dumpster") ){
+            metalGround = true;
+        } else {
+            metalGround = false;
+        }
+
         if(enableMovementOnNextTouch){
             enableMovementOnNextTouch = false;
             ResetRestrictions();
