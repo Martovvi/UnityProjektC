@@ -366,7 +366,7 @@ public class PlayerMovement : MonoBehaviour {
         }*/
         
         // Capsule cast
-        if (Physics.CheckSphere(transform.position + new Vector3(0,(playerHeight * 0.58f), 0), playerRadius))
+        if (Physics.CheckSphere(transform.position + new Vector3(0,(playerHeight * 0.58f), 0), playerRadius, 11))
         {
             return false;
         }
