@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour {
     public float playerRadius;
     public LayerMask ground;
     private bool grounded;
+    public bool metalGround;
     
     // Slope Handling
     [Header("Slope Handling")]
@@ -92,7 +93,7 @@ public class PlayerMovement : MonoBehaviour {
         WALLRUNNING,
         AIR
     }
-    
+     
     // Rotation and look
     private float xRotation;
     private float sensitivity = 50f;
@@ -470,6 +471,13 @@ public class PlayerMovement : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log(collision.collider.gameObject.GetComponent<Renderer>().material.name.StartsWith("Cargo"));
+        if(collision.collider.gameObject.GetComponent<Renderer>().material.name.StartsWith("Cargo") || collision.collider.gameObject.GetComponent<Renderer>().material.name.StartsWith("Dumpster") ){
+            metalGround = true;
+        } else {
+            metalGround = false;
+        }
+
         if(enableMovementOnNextTouch){
             enableMovementOnNextTouch = false;
             ResetRestrictions();
@@ -489,5 +497,13 @@ public class PlayerMovement : MonoBehaviour {
             + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
 
         return velocityXZ + velocityY;
+    }
+
+    public bool getGrounded(){
+        return grounded;
+    }
+
+    public float getVelocity(){
+        return rb.velocity.magnitude;
     }
 }
