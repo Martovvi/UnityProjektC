@@ -43,12 +43,9 @@ public class Grappling : MonoBehaviour
     public AudioClip GrappleExtend;
     public AudioClip GrappleRetract;
 
-    private void Awake(){
-        audioSrc = GetComponent<AudioSource>();
-    }
-
     void Awake()
     {
+        audioSrc = GetComponent<AudioSource>();
         spring = new Spring();
         spring.SetTarget(0);
     }
