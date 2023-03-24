@@ -20,6 +20,17 @@ public class Grappling : MonoBehaviour
     private Vector3 grappleContactPoint;
     private SpringJoint joint;
 
+    //new rope animation
+    private Spring spring;
+    public int quality;
+    public float damper;
+    public float strength;
+    public float velocity;
+    public float waveCount;
+    public float waveHeight;
+    private Vector3 currentGrapplePosition;
+    public AnimationCurve affectCurve;
+
     [Header("Cooldown")]
     public float grappleCooldown;
     private float grappleCooldownTimer;
@@ -28,6 +39,12 @@ public class Grappling : MonoBehaviour
     public KeyCode grappleKey = KeyCode.Mouse1;
 
     private bool grappling;
+
+    void Awake()
+    {
+        spring = new Spring();
+        spring.SetTarget(0);
+    }
 
     private void Start()
     {
@@ -39,7 +56,7 @@ public class Grappling : MonoBehaviour
     {
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
 
-        if(Input.GetKeyUp(grappleKey)) StopGrapple();
+        if (Input.GetKeyUp(grappleKey)) StopGrapple();
 
         if (grappleCooldownTimer > 0)
             grappleCooldownTimer -= Time.deltaTime;
@@ -47,8 +64,53 @@ public class Grappling : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (grappling)
-            lr.SetPosition(0, gunTip.position);
+        DrawRope();
+    }
+
+    void DrawRope()
+    {
+        
+        
+        //new
+        //If not grappling, don't draw rope and reset everything
+        if (!grappling)
+        {
+            currentGrapplePosition = gunTip.position;
+            spring.Reset();
+            if (lr.positionCount > 0)
+                lr.positionCount = 0;
+            return;
+        }
+
+        //old nested within new
+        //lr.SetPosition(0, gunTip.position);
+        //old end
+
+        if (lr.positionCount == 0)
+        {
+            spring.SetVelocity(velocity);
+            lr.positionCount = quality + 1;
+        }
+
+        spring.SetDamper(damper);
+        spring.SetStrength(strength);
+        spring.Update(Time.deltaTime);
+
+        var grapplePoint = grappleContactPoint;
+        var gunTipPosition = gunTip.position;
+        var up = Quaternion.LookRotation((grapplePoint - gunTipPosition).normalized) * Vector3.up;
+
+        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 12f);
+
+        for (var i = 0; i < quality + 1; i++)
+        {
+            var delta = i / (float)quality;
+            var offset = up * waveHeight * Mathf.Sin(delta * waveCount * Mathf.PI) * spring.Value *
+                         affectCurve.Evaluate(delta);
+
+            lr.SetPosition(i, Vector3.Lerp(gunTipPosition, currentGrapplePosition, delta) + offset);
+        }
+        //new end
     }
 
     private void StartGrapple()
@@ -65,13 +127,11 @@ public class Grappling : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, grappleableSurface))
         {
             grappleContactPoint = hit.point;
-            
+
             //Swinging implementation
             joint = pm.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = grappleContactPoint;
-            
-            //////////Copypasta
 
             float distanceFromPoint = Vector3.Distance(pm.transform.position, grappleContactPoint);
 
@@ -83,7 +143,6 @@ public class Grappling : MonoBehaviour
             joint.spring = 4.5f;
             joint.damper = 7f;
             joint.massScale = 4.5f;
-            //////////////Copypaste END
 
             Invoke(nameof(ExecuteGrapple), grappleDelayTime);
         }
@@ -94,7 +153,7 @@ public class Grappling : MonoBehaviour
             Invoke(nameof(StopGrapple), grappleDelayTime);
         }
         lr.enabled = true;
-        lr.SetPosition(1, grappleContactPoint);
+        //lr.SetPosition(1, grappleContactPoint);
     }
 
     private void ExecuteGrapple()
@@ -120,7 +179,7 @@ public class Grappling : MonoBehaviour
         animator.SetTrigger("OnGrappleStop");
 
         pm.freeze = false;
-        
+
         grappling = false;
 
         grappleCooldownTimer = grappleCooldown;
