@@ -246,6 +246,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_box_v1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -674,7 +694,7 @@ GameObject:
   - component: {fileID: 22779632}
   - component: {fileID: 22779631}
   - component: {fileID: 22779630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,6 +1002,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41257007}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &47077972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47077973}
+  - component: {fileID: 47077974}
+  m_Layer: 0
+  m_Name: Cube (10)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &47077973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47077972}
+  m_LocalRotation: {x: -0, y: 0.7177919, z: -0, w: 0.6962577}
+  m_LocalPosition: {x: -42.9, y: 0.9814739, z: 19.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 91.745, z: 0}
+--- !u!65 &47077974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47077972}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 69.527336, y: 71.99475, z: 1.6169472}
+  m_Center: {x: 38.26838, y: 35.497375, z: 0.3084818}
 --- !u!1 &47225896
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +1060,7 @@ GameObject:
   - component: {fileID: 47225900}
   - component: {fileID: 47225899}
   - component: {fileID: 47225898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1667,7 +1732,7 @@ GameObject:
   - component: {fileID: 66350354}
   - component: {fileID: 66350353}
   - component: {fileID: 66350352}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2810,7 +2875,7 @@ GameObject:
   - component: {fileID: 123816189}
   - component: {fileID: 123816188}
   - component: {fileID: 123816187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3466,6 +3531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_block_v1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -3679,7 +3748,7 @@ GameObject:
   - component: {fileID: 157038217}
   - component: {fileID: 157038216}
   - component: {fileID: 157038215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD1through (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4126,7 +4195,7 @@ GameObject:
   - component: {fileID: 169644945}
   - component: {fileID: 169644944}
   - component: {fileID: 169644943}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5960,7 +6029,7 @@ GameObject:
   - component: {fileID: 234320380}
   - component: {fileID: 234320379}
   - component: {fileID: 234320378}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6059,7 +6128,7 @@ GameObject:
   - component: {fileID: 242828192}
   - component: {fileID: 242828191}
   - component: {fileID: 242828190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD1through (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9789,6 +9858,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca96e41c16bb7b14b820f5c4778bcd93, type: 3}
+--- !u!1 &354058398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 354058399}
+  - component: {fileID: 354058400}
+  m_Layer: 0
+  m_Name: Cube (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &354058399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354058398}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.000000104308114}
+  m_LocalPosition: {x: 19.1, y: 0.9814739, z: -87.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &354058400
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354058398}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 236.47783, y: 71.99476, z: 1.6169472}
+  m_Center: {x: 124.62888, y: 35.49738, z: 0.3084736}
 --- !u!1 &356097912
 GameObject:
   m_ObjectHideFlags: 0
@@ -10148,7 +10262,7 @@ GameObject:
   - component: {fileID: 371841085}
   - component: {fileID: 371841084}
   - component: {fileID: 371841083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10372,7 +10486,7 @@ GameObject:
   - component: {fileID: 376987134}
   - component: {fileID: 376987133}
   - component: {fileID: 376987132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11732,6 +11846,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461482729}
   m_Mesh: {fileID: 4300022, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &463087206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463087208}
+  - component: {fileID: 463087207}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &463087207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463087206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50.978767, y: 71.99476, z: 1.6169472}
+  m_Center: {x: 31.879368, y: 35.49738, z: 0.3084736}
+--- !u!4 &463087208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463087206}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -33.3677, y: 0.9814739, z: 55.64469}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &463710304
 GameObject:
   m_ObjectHideFlags: 0
@@ -11830,6 +11989,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463710304}
   m_Mesh: {fileID: 4300022, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &470911629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: d0a6f0725fb579a45a39bf98830886a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1349786114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &470911633
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470911629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300006, guid: d0a6f0725fb579a45a39bf98830886a1, type: 3}
 --- !u!1 &471480679
 GameObject:
   m_ObjectHideFlags: 0
@@ -12448,6 +12627,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dumpsters_v1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e3be5b0626d16304eb988d7565f17bc5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: e3be5b0626d16304eb988d7565f17bc5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: e3be5b0626d16304eb988d7565f17bc5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e3be5b0626d16304eb988d7565f17bc5, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -12759,6 +12950,26 @@ PrefabInstance:
     - target: {fileID: 100008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
       propertyPath: m_Name
       value: Wooden_box_v1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
       propertyPath: m_RootOrder
@@ -13964,7 +14175,7 @@ GameObject:
   - component: {fileID: 545437320}
   - component: {fileID: 545437319}
   - component: {fileID: 545437318}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14256,6 +14467,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552917252}
   m_CullTransparentMesh: 1
+--- !u!1 &556779226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556779227}
+  - component: {fileID: 556779228}
+  m_Layer: 0
+  m_Name: Cube (13)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &556779227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556779226}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 19.89, y: 0.9814739, z: 67.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &556779228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556779226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43.375217, y: 71.99476, z: 1.6169472}
+  m_Center: {x: 35.681145, y: 35.49738, z: 0.3084736}
 --- !u!1 &568787907
 GameObject:
   m_ObjectHideFlags: 0
@@ -15457,6 +15713,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 24.781006, y: 9.901018, z: 13.90224}
   m_Center: {x: 0.049093254, y: 4.946883, z: 0.000005722047}
+--- !u!1 &610070112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 610070113}
+  - component: {fileID: 610070114}
+  m_Layer: 0
+  m_Name: Cube (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &610070113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610070112}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 10.603073, y: 0.9814739, z: -16.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &610070114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610070112}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.938026, y: 71.99475, z: 1.6169472}
+  m_Center: {x: 44.725483, y: 35.497375, z: 0.3084818}
 --- !u!1 &623287060
 GameObject:
   m_ObjectHideFlags: 0
@@ -17219,7 +17520,7 @@ GameObject:
   - component: {fileID: 689624779}
   - component: {fileID: 689624778}
   - component: {fileID: 689624777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17318,6 +17619,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689624775}
   m_Mesh: {fileID: 4300022, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &691783704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 691783705}
+  - component: {fileID: 691783706}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &691783705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691783704}
+  m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 11.84, y: 0.9814739, z: 58.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &691783706
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691783704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 139.05406, y: 71.99476, z: 1.6169472}
+  m_Center: {x: 75.917, y: 35.49738, z: 0.3084736}
 --- !u!1 &698024767
 GameObject:
   m_ObjectHideFlags: 0
@@ -17582,7 +17928,7 @@ GameObject:
   - component: {fileID: 708281973}
   - component: {fileID: 708281972}
   - component: {fileID: 708281971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17903,7 +18249,7 @@ GameObject:
   - component: {fileID: 727443677}
   - component: {fileID: 727443676}
   - component: {fileID: 727443675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18447,7 +18793,7 @@ GameObject:
   - component: {fileID: 747046970}
   - component: {fileID: 747046969}
   - component: {fileID: 747046968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19051,7 +19397,7 @@ GameObject:
   - component: {fileID: 776725317}
   - component: {fileID: 776725316}
   - component: {fileID: 776725315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19618,7 +19964,7 @@ GameObject:
   - component: {fileID: 791466900}
   - component: {fileID: 791466899}
   - component: {fileID: 791466898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20138,7 +20484,7 @@ GameObject:
   - component: {fileID: 811724854}
   - component: {fileID: 811724853}
   - component: {fileID: 811724852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22024,7 +22370,7 @@ GameObject:
   - component: {fileID: 861297253}
   - component: {fileID: 861297252}
   - component: {fileID: 861297251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22122,7 +22468,7 @@ GameObject:
   - component: {fileID: 863287681}
   - component: {fileID: 863287680}
   - component: {fileID: 863287679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22940,6 +23286,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883063601}
   m_Mesh: {fileID: 4300022, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &885785382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885785383}
+  - component: {fileID: 885785384}
+  m_Layer: 0
+  m_Name: Cube (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &885785383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885785382}
+  m_LocalRotation: {x: -0, y: 0.46017513, z: -0, w: 0.88782823}
+  m_LocalPosition: {x: -318.64, y: 0.9814739, z: 315.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 54.797, z: 0}
+--- !u!65 &885785384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885785382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 51.194336, y: 71.99475, z: 1.6169469}
+  m_Center: {x: 205.34802, y: 35.497375, z: 0.30824742}
 --- !u!1 &892973850
 GameObject:
   m_ObjectHideFlags: 0
@@ -23065,7 +23456,7 @@ GameObject:
   - component: {fileID: 896729916}
   - component: {fileID: 896729915}
   - component: {fileID: 896729914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD1open (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23289,7 +23680,7 @@ GameObject:
   - component: {fileID: 901777046}
   - component: {fileID: 901777045}
   - component: {fileID: 901777044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23708,7 +24099,7 @@ GameObject:
   - component: {fileID: 909449680}
   - component: {fileID: 909449679}
   - component: {fileID: 909449678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24251,6 +24642,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road_block_v1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -24561,7 +24956,7 @@ GameObject:
   - component: {fileID: 976154979}
   - component: {fileID: 976154978}
   - component: {fileID: 976154977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25007,6 +25402,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_Name
       value: Road_block_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_RootOrder
@@ -26858,7 +27257,7 @@ GameObject:
   - component: {fileID: 1057134234}
   - component: {fileID: 1057134233}
   - component: {fileID: 1057134232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD2square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27197,7 +27596,7 @@ GameObject:
   - component: {fileID: 1065035304}
   - component: {fileID: 1065035303}
   - component: {fileID: 1065035302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28080,7 +28479,7 @@ GameObject:
   - component: {fileID: 1080224483}
   - component: {fileID: 1080224482}
   - component: {fileID: 1080224481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29417,7 +29816,7 @@ GameObject:
   - component: {fileID: 1125195373}
   - component: {fileID: 1125195372}
   - component: {fileID: 1125195371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29976,7 +30375,7 @@ GameObject:
   - component: {fileID: 1148795243}
   - component: {fileID: 1148795242}
   - component: {fileID: 1148795241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30514,7 +30913,7 @@ GameObject:
   - component: {fileID: 1165716004}
   - component: {fileID: 1165716003}
   - component: {fileID: 1165716002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dumpsters_v1_garbadge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30744,7 +31143,7 @@ GameObject:
   - component: {fileID: 1177484986}
   - component: {fileID: 1177484985}
   - component: {fileID: 1177484984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30853,6 +31252,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_Name
       value: Road_block_v1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_RootOrder
@@ -31732,7 +32135,7 @@ GameObject:
   - component: {fileID: 1218227541}
   - component: {fileID: 1218227540}
   - component: {fileID: 1218227539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD2square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32281,7 +32684,7 @@ GameObject:
   - component: {fileID: 1237558784}
   - component: {fileID: 1237558783}
   - component: {fileID: 1237558782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dumpsters_v1_garbadge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32491,7 +32894,7 @@ GameObject:
   - component: {fileID: 1246941294}
   - component: {fileID: 1246941293}
   - component: {fileID: 1246941292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32602,7 +33005,7 @@ GameObject:
   - component: {fileID: 1248171721}
   - component: {fileID: 1248171720}
   - component: {fileID: 1248171719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33141,7 +33544,7 @@ GameObject:
   - component: {fileID: 1269873839}
   - component: {fileID: 1269873838}
   - component: {fileID: 1269873837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33449,6 +33852,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272848227}
   m_Mesh: {fileID: 4300024, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &1274550808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1274550809}
+  - component: {fileID: 1274550810}
+  m_Layer: 0
+  m_Name: Cube (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1274550809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274550808}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.000000104308114}
+  m_LocalPosition: {x: 19.1, y: 0.9814739, z: -52.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &1274550810
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274550808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 140.61119, y: 71.99476, z: 1.6169472}
+  m_Center: {x: 133.57948, y: 35.49738, z: 0.3084736}
 --- !u!1 &1276999052
 GameObject:
   m_ObjectHideFlags: 0
@@ -35438,7 +35886,7 @@ GameObject:
   - component: {fileID: 1332112909}
   - component: {fileID: 1332112908}
   - component: {fileID: 1332112907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35649,6 +36097,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333241852}
   m_Mesh: {fileID: 4300020, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &1341189913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341189914}
+  - component: {fileID: 1341189915}
+  m_Layer: 0
+  m_Name: Cube (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1341189914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341189913}
+  m_LocalRotation: {x: -0, y: 0.99985135, z: -0, w: 0.017244542}
+  m_LocalPosition: {x: -217.2, y: 0.9814739, z: 165.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 178.024, z: 0}
+--- !u!65 &1341189915
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341189913}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 370.99277, y: 71.99476, z: 1.616947}
+  m_Center: {x: 180.96765, y: 35.49738, z: 0.30884847}
 --- !u!1 &1346596141
 GameObject:
   m_ObjectHideFlags: 0
@@ -36386,7 +36879,7 @@ GameObject:
   - component: {fileID: 1369157367}
   - component: {fileID: 1369157366}
   - component: {fileID: 1369157365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36501,6 +36994,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_Name
       value: Road_block_v1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_RootOrder
@@ -37409,7 +37906,7 @@ GameObject:
   - component: {fileID: 1435674890}
   - component: {fileID: 1435674889}
   - component: {fileID: 1435674888}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37769,6 +38266,26 @@ PrefabInstance:
     - target: {fileID: 100008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
       propertyPath: m_Name
       value: Wooden_box_v1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
       propertyPath: m_RootOrder
@@ -41172,7 +41689,7 @@ GameObject:
   - component: {fileID: 1562328541}
   - component: {fileID: 1562328540}
   - component: {fileID: 1562328539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD1open (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41380,7 +41897,7 @@ GameObject:
   - component: {fileID: 1572349825}
   - component: {fileID: 1572349824}
   - component: {fileID: 1572349823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41658,7 +42175,7 @@ GameObject:
   - component: {fileID: 1582989968}
   - component: {fileID: 1582989967}
   - component: {fileID: 1582989966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43675,7 +44192,7 @@ GameObject:
   - component: {fileID: 1645464967}
   - component: {fileID: 1645464966}
   - component: {fileID: 1645464965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44105,6 +44622,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f7fbca330673184eb6b88f314b96c69, type: 3}
+--- !u!1 &1649457809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649457810}
+  - component: {fileID: 1649457811}
+  m_Layer: 0
+  m_Name: Cube (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1649457810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649457809}
+  m_LocalRotation: {x: -0, y: 0.7071069, z: -0, w: -0.7071067}
+  m_LocalPosition: {x: -184.7, y: 0.9814739, z: -91.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!65 &1649457811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649457809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 185.63783, y: 71.99476, z: 1.6169472}
+  m_Center: {x: 131.97768, y: 35.49738, z: 0.3084736}
 --- !u!1 &1653451812
 GameObject:
   m_ObjectHideFlags: 0
@@ -44118,7 +44680,7 @@ GameObject:
   - component: {fileID: 1653451816}
   - component: {fileID: 1653451815}
   - component: {fileID: 1653451814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45358,7 +45920,7 @@ GameObject:
   - component: {fileID: 1694070568}
   - component: {fileID: 1694070567}
   - component: {fileID: 1694070566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2through
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46331,7 +46893,7 @@ GameObject:
   - component: {fileID: 1733024230}
   - component: {fileID: 1733024229}
   - component: {fileID: 1733024228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48515,7 +49077,7 @@ GameObject:
   - component: {fileID: 1797572449}
   - component: {fileID: 1797572448}
   - component: {fileID: 1797572447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48614,7 +49176,7 @@ GameObject:
   - component: {fileID: 1806376914}
   - component: {fileID: 1806376913}
   - component: {fileID: 1806376912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49990,6 +50552,96 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853182391}
   m_Mesh: {fileID: 4300022, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &1860027366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860027367}
+  - component: {fileID: 1860027368}
+  m_Layer: 0
+  m_Name: Cube (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1860027367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860027366}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -24.17, y: 0.9814739, z: 57.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1860027368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860027366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 72.93718, y: 71.99475, z: 1.6169472}
+  m_Center: {x: 39.051685, y: 35.497375, z: 0.3084683}
+--- !u!1 &1863070922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863070923}
+  m_Layer: 0
+  m_Name: Invisible Barriers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863070923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863070922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 130.7677, y: -0.9814739, z: -2.3446894}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 463087208}
+  - {fileID: 691783705}
+  - {fileID: 354058399}
+  - {fileID: 2103886386}
+  - {fileID: 2146434393}
+  - {fileID: 2072182286}
+  - {fileID: 1341189914}
+  - {fileID: 885785383}
+  - {fileID: 1649457810}
+  - {fileID: 1274550809}
+  - {fileID: 47077973}
+  - {fileID: 610070113}
+  - {fileID: 1860027367}
+  - {fileID: 556779227}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1865184000
 GameObject:
   m_ObjectHideFlags: 0
@@ -50002,7 +50654,7 @@ GameObject:
   - component: {fileID: 1865184004}
   - component: {fileID: 1865184003}
   - component: {fileID: 1865184002}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FuelTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50605,7 +51257,7 @@ GameObject:
   - component: {fileID: 1916270757}
   - component: {fileID: 1916270756}
   - component: {fileID: 1916270755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51136,7 +51788,7 @@ GameObject:
   - component: {fileID: 1932730840}
   - component: {fileID: 1932730839}
   - component: {fileID: 1932730838}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GarbageCart (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51232,6 +51884,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_Name
       value: Road_block_v1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80030beb64998ca41b76b2ccf9866276, type: 3}
       propertyPath: m_RootOrder
@@ -54800,7 +55456,7 @@ GameObject:
   - component: {fileID: 2046175131}
   - component: {fileID: 2046175130}
   - component: {fileID: 2046175129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55355,6 +56011,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070434032}
   m_Mesh: {fileID: 4300022, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &2072182285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2072182286}
+  - component: {fileID: 2072182287}
+  m_Layer: 0
+  m_Name: Cube (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2072182286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072182285}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -582.92, y: 0.9814739, z: 341.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &2072182287
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072182285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 35.043007, y: 71.99476, z: 1.616947}
+  m_Center: {x: 205.16107, y: 35.49738, z: 0.30868816}
 --- !u!1 &2075146427
 GameObject:
   m_ObjectHideFlags: 0
@@ -55592,7 +56293,7 @@ GameObject:
   - component: {fileID: 2084168685}
   - component: {fileID: 2084168684}
   - component: {fileID: 2084168683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56251,6 +56952,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097502027}
   m_Mesh: {fileID: 4300026, guid: 856f086268c2c1b4f8f1d4b9bc614217, type: 3}
+--- !u!1 &2103886385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103886386}
+  - component: {fileID: 2103886387}
+  m_Layer: 0
+  m_Name: Cube (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2103886386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103886385}
+  m_LocalRotation: {x: -0, y: 0.7071069, z: -0, w: -0.7071067}
+  m_LocalPosition: {x: -223.3, y: 0.9814739, z: -91.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!65 &2103886387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103886385}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 218.40665, y: 71.99476, z: 1.6169472}
+  m_Center: {x: 115.59329, y: 35.49738, z: 0.3084736}
 --- !u!1 &2117442349
 GameObject:
   m_ObjectHideFlags: 0
@@ -56719,6 +57465,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wooden_box_v1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: dcf39c3c160b51b49af399efea061f40, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -57035,7 +57801,7 @@ GameObject:
   - component: {fileID: 2131995484}
   - component: {fileID: 2131995483}
   - component: {fileID: 2131995482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wooden_box_v1_LD1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57401,3 +58167,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2146434392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146434393}
+  - component: {fileID: 2146434394}
+  m_Layer: 0
+  m_Name: Cube (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146434393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146434392}
+  m_LocalRotation: {x: -0, y: 0.99985135, z: -0, w: 0.017244542}
+  m_LocalPosition: {x: -216.1, y: 0.9814739, z: 133.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863070923}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 178.024, z: 0}
+--- !u!65 &2146434394
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146434392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 360.0807, y: 71.99476, z: 1.616947}
+  m_Center: {x: 186.42653, y: 35.49738, z: 0.30868816}
