@@ -136,7 +136,7 @@ public class WallRunning : MonoBehaviour
         if ((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude)
             wallForward = -wallForward;
 
-        rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
+        //rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
 
         // upwards/downwards force
         if (upwardsRunning)
