@@ -24184,6 +24184,21 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 560761444}
+    - target: {fileID: 4632845570959576672, guid: d035ccfdb935e4242ba49a89c5b99026,
+        type: 3}
+      propertyPath: GrappleExtend
+      value: 
+      objectReference: {fileID: 8300000, guid: b1c99b691c5b3134d87ed2489b81fc9b, type: 3}
+    - target: {fileID: 4632845570959576672, guid: d035ccfdb935e4242ba49a89c5b99026,
+        type: 3}
+      propertyPath: GrappleRetract
+      value: 
+      objectReference: {fileID: 8300000, guid: 84748e0304fe4f546b6b8113ff2513b5, type: 3}
+    - target: {fileID: 4632845570959576672, guid: d035ccfdb935e4242ba49a89c5b99026,
+        type: 3}
+      propertyPath: grappleableSurface.m_Bits
+      value: 3413
+      objectReference: {fileID: 0}
     - target: {fileID: 4707756835659264736, guid: d035ccfdb935e4242ba49a89c5b99026,
         type: 3}
       propertyPath: m_Layer
@@ -28883,31 +28898,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1062870582}
     m_Modifications:
-    - target: {fileID: 4632845570310105631, guid: d035ccfdb935e4242ba49a89c5b99026,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632845570310105631, guid: d035ccfdb935e4242ba49a89c5b99026,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632845570310105631, guid: d035ccfdb935e4242ba49a89c5b99026,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632845570310105631, guid: d035ccfdb935e4242ba49a89c5b99026,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4632845570322340061, guid: d035ccfdb935e4242ba49a89c5b99026,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3649868247176245943, guid: 2e4f7a04e0af88c499464cbfc38d6fbe,
         type: 3}
       propertyPath: m_Layer
@@ -29219,6 +29209,31 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7833041330932968575, guid: 2e4f7a04e0af88c499464cbfc38d6fbe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632845570310105631, guid: d035ccfdb935e4242ba49a89c5b99026,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632845570310105631, guid: d035ccfdb935e4242ba49a89c5b99026,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632845570310105631, guid: d035ccfdb935e4242ba49a89c5b99026,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632845570310105631, guid: d035ccfdb935e4242ba49a89c5b99026,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632845570322340061, guid: d035ccfdb935e4242ba49a89c5b99026,
         type: 3}
       propertyPath: m_Layer
       value: 10

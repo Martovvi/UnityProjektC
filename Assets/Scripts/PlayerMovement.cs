@@ -175,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
         //Mode - Wallrunning
         if (wallrunning)
         {
+            Debug.Log("wallrunnning");
             state = MovementState.WALLRUNNING;
             moveSpeed = wallrunSpeed;
         }
@@ -303,7 +304,7 @@ public class PlayerMovement : MonoBehaviour
     private void SpeedControl()
     {
         //no limit when grappling
-        if (activeGrapple) return;
+        //if (activeGrapple) return;
 
         // limiting speed on slope
         if (OnSlope() && !exitingSlope)
