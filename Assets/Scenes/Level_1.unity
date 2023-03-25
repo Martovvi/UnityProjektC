@@ -2901,7 +2901,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiObject: {fileID: 1789464616}
   hintLabel: {fileID: 2031886445}
-  hintText: Use WASD to move around.
+  hintText: Use WASD to move around.<br>SPACEBAR to jump.<br>SHIFT to sprint.<br>CTRL
+    to crouch.
 --- !u!65 &196630155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2978,7 +2979,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &211057484
 GameObject:
@@ -5423,7 +5424,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &407056995
 GameObject:
@@ -17705,7 +17706,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiObject: {fileID: 1789464616}
   hintLabel: {fileID: 2031886445}
-  hintText: Kill every enemy to complete the mission.
+  hintText: Press the left mouse button to use your blade.<br>Kill every enemy to
+    complete the level.
 --- !u!65 &1198878715
 BoxCollider:
   m_ObjectHideFlags: 0
