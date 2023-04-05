@@ -153,10 +153,6 @@ public class EnemyAI : MonoBehaviour
     // Reduces health on damage
     public void TakeDamage(float damageAmount)
     {
-
-        //belongs in game-/ audiomanager
-        audioSrc.PlayOneShot(swordConnectsSound);
-
         health -= damageAmount;
         Instantiate(blood,
             new Vector3(transform.position.x, transform.position.y, transform.position.z),
