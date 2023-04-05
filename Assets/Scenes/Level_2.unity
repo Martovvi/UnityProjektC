@@ -2418,7 +2418,7 @@ GameObject:
   - component: {fileID: 25892117}
   - component: {fileID: 25892116}
   - component: {fileID: 25892115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD1through (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25913,7 +25913,7 @@ GameObject:
   - component: {fileID: 970621086}
   - component: {fileID: 970621085}
   - component: {fileID: 970621084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD1open (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26459,7 +26459,7 @@ GameObject:
   - component: {fileID: 986102711}
   - component: {fileID: 986102710}
   - component: {fileID: 986102709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30291,7 +30291,7 @@ GameObject:
   - component: {fileID: 1116687562}
   - component: {fileID: 1116687561}
   - component: {fileID: 1116687560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41000,7 +41000,7 @@ GameObject:
   - component: {fileID: 1614575831}
   - component: {fileID: 1614575830}
   - component: {fileID: 1614575829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD1through (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41584,7 +41584,7 @@ GameObject:
   - component: {fileID: 1642564623}
   - component: {fileID: 1642564622}
   - component: {fileID: 1642564621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48818,7 +48818,7 @@ GameObject:
   - component: {fileID: 1873305018}
   - component: {fileID: 1873305017}
   - component: {fileID: 1873305016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53207,7 +53207,7 @@ GameObject:
   - component: {fileID: 2031072032}
   - component: {fileID: 2031072031}
   - component: {fileID: 2031072030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cargo_container_v1_LD2close (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
